@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torres de Hanói - Árbol Binario</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Torres de Hanói con Árbol Binario</h1>
+        
+        <!-- Panel de control -->
+        <div class="panel-control">
+            <div class="controles">
+                <label for="cantidadDiscos">Número de discos:</label>
+                <select id="cantidadDiscos">
+                    <option value="3">3 discos</option>
+                    <option value="4">4 discos</option>
+                    <option value="5">5 discos</option>
+                    <option value="6">6 discos</option>
+                </select>
+                <button id="botonReiniciar">Reiniciar Juego</button>
+                <button id="botonResolver">Resolver Automático</button>
+                <button id="botonPaso" disabled>Paso a Paso</button>
+            </div>
+            
+            <div class="informacion">
+                <div class="estadisticas">
+                    <span>Movimientos: <span id="contadorMovimientos">0</span></span>
+                    <span>Movimientos Mínimos: <span id="movimientosMinimos">7</span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área del juego de Torres -->
+        <div class="area-juego">
+            <div class="contenedor-torres">
+                <div class="torre" data-torre="0">
+                    <div class="etiqueta-torre">Torre A (Origen)</div>
+                    <div class="poste-torre"></div>
+                    <div class="base-torre"></div>
+                    <div class="contenedor-discos" id="torre0"></div>
+                </div>
+                <div class="torre" data-torre="1">
+                    <div class="etiqueta-torre">Torre B (Auxiliar)</div>
+                    <div class="poste-torre"></div>
+                    <div class="base-torre"></div>
+                    <div class="contenedor-discos" id="torre1"></div>
+                </div>
+                <div class="torre" data-torre="2">
+                    <div class="etiqueta-torre">Torre C (Destino)</div>
+                    <div class="poste-torre"></div>
+                    <div class="base-torre"></div>
+                    <div class="contenedor-discos" id="torre2"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel del Árbol Binario -->
+        <div class="panel-arbol">
+            <h2>Análisis del Árbol Binario de Decisiones</h2>
+            <div class="estadisticas-arbol">
+                <div class="elemento-estadistica">
+                    <span>Altura del Árbol: <span id="alturaArbol">0</span> niveles</span>
+                </div>
+                <div class="elemento-estadistica">
+                    <span>Número de Nodos: <span id="contadorNodos">0</span> nodos</span>
+                </div>
+                <div class="elemento-estadistica">
+                    <span>Complejidad Temporal: O(2^n) = <span id="complejidad">0</span> operaciones</span>
+                </div>
+            </div>
+            
+            <!-- Visualización gráfica del árbol -->
+            <div class="contenedor-arbol">
+                <h3>Visualización del Árbol de Movimientos</h3>
+                <canvas id="lienzoArbol" width="800" height="400"></canvas>
+            </div>
+            
+            <!-- Recorrido y análisis del árbol -->
+            <div class="recorrido-arbol">
+                <h3>Registro de Movimientos (Consola de Desarrollo)</h3>
+                <div id="salidaRecorrido" class="salida-consola"></div>
+            </div>
+        </div>
+
+        <!-- Estado actual del juego -->
+        <div class="estado-juego">
+            <div id="mensajeJuego">¡Bienvenido! Selecciona un disco para comenzar</div>
+        </div>
+    </div>
+
+    <!-- Scripts del juego -->
+    <script src="logica.js"></script>
+</body>
+</html>
